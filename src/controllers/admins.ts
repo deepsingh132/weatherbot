@@ -72,10 +72,10 @@ export const updateAdmin = async (
     await admin.save();
 
     res.cookie("WEATHERBOT-AUTH", admin.authentication.sessionToken, {
-      domain: HOSTNAME,
       path: "/",
       httpOnly: true,
-      sameSite: "lax",
+      sameSite: "none",
+      partitioned: true,
       maxAge: 1000 * 60 * 60 * 24 *  1, // 1 day
       // secure disabled for development
       secure: HOSTNAME !== "localhost",

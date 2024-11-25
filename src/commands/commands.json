@@ -1,0 +1,28 @@
+{
+  "commands": [
+    {
+      "command": "start",
+      "description": "Start the bot."
+    },
+    {
+      "command": "stop",
+      "description": "Stop the bot."
+    },
+    {
+      "command": "subscribe",
+      "description": "Subscribe to weather updates."
+    },
+    {
+      "command": "unsubscribe",
+      "description": "Unsubscribe from weather updates."
+    },
+    {
+      "command": "help",
+      "description": "Get help with the bot."
+    },
+    {
+      "command": "about",
+      "description": "Get information about the bot."
+    }
+  ]
+}

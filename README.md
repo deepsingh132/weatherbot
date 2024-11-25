@@ -104,7 +104,7 @@ Built with the lightweight and robust **grammY** framework for Telegram bot deve
 Set up the following keys in a `.env` file:
 
 ```env
-PORT=3000
+PORT=5000
 OPENWEATHER_API_KEY=your_openweathermap_api_key
 MONGODB_URI=your_mongodb_connection_string
 BOT_TOKEN=your_telegram_bot_token

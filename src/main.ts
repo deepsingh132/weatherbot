@@ -95,7 +95,9 @@ if (!MONGODB_URI) {
   app.use("/api/v1/admin", router());
 
   app.get("/", (_req, res) => {
-    res.send("Hello World!");
+    res.send(
+      "Telegram WeatherBot is running!, checkout '/api/v1/admin' endpoints"
+    );
   });
 
   server.listen(PORT, () => {

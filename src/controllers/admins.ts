@@ -7,6 +7,9 @@ import {
 } from "../db/models/Admin";
 import { random, authentication as auth } from "../helpers/index";
 
+
+const HOSTNAME = process.env.HOSTNAME || "localhost";
+
 export const getAllAdmins = async (
   req: express.Request,
   res: express.Response
@@ -69,13 +72,13 @@ export const updateAdmin = async (
     await admin.save();
 
     res.cookie("WEATHERBOT-AUTH", admin.authentication.sessionToken, {
-      domain: "localhost",
+      domain: HOSTNAME,
       path: "/",
       httpOnly: true,
       sameSite: "lax",
-      maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
+      maxAge: 1000 * 60 * 60 * 24 *  1, // 1 day
       // secure disabled for development
-      // secure: true,
+      secure: HOSTNAME !== "localhost",
     });
 
     return res.status(200).json(admin).end();

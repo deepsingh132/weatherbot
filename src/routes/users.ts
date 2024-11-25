@@ -1,6 +1,7 @@
 import express from "express";
 import Settings from "../db/models/Settings";
 import User from "../db/models/User";
+import Subscription from "../db/models/Subscription";
 
 // const router = express.Router();
 
@@ -31,7 +32,8 @@ export default (router: express.Router) => {
   router.delete("/user/:id", async (req, res) => {
     const { id } = req.params;
     await User.findByIdAndDelete(id);
-    res.json({ message: "User deleted" });
+    await Subscription.deleteMany({ userId: id });
+    res.json({ message: "User deleted and subscriptions removed" });
   });
 
   return router;

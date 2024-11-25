@@ -40,13 +40,18 @@ export const start = async (ctx: MyContext, settings: Settings) => {
   try {
     const userAvatar = await getUserAvatar(ctx, settings);
 
+    const firstName = ctx.from?.first_name || "Unknown";
+    const lastName = ctx.from?.last_name || "";
+
+    const fullName = `${firstName} ${lastName}`;
+
     // Register the user if not already in the database
     const user = await User.findOneAndUpdate(
       { chatId },
       {
         $setOnInsert: {
           chatId,
-          name: ctx.from?.first_name + " " + ctx.from?.last_name || "",
+          name: fullName.trim(),
           avatar: userAvatar,
           lastAccess: new Date(),
           isBanned: false,

@@ -36,7 +36,7 @@ if (!MONGODB_URI) {
   const io = new Server(server, {
     cors: {
       origin: allowedOrigins,
-      methods: ["GET", "POST", "PUT", "DELETE"],
+      methods: ["HEAD","GET", "POST", "PUT", "DELETE", "PATCH"],
       credentials: true,
     },
   });

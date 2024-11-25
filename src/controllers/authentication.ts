@@ -37,10 +37,9 @@ export const login = async (req: express.Request, res: express.Response) => {
     await admin.save();
 
     res.cookie("WEATHERBOT-AUTH", admin.authentication.sessionToken, {
-      domain: HOSTNAME,
       path: "/",
       httpOnly: true,
-      sameSite: "lax",
+      sameSite: "none",
       maxAge: 1000 * 60 * 60 * 24 * 1, // 1 day
       // secure disabled for development
       secure: HOSTNAME !== "localhost",

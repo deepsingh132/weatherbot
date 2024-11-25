@@ -106,8 +106,9 @@ Set up the following keys in a `.env` file:
 ```env
 PORT=3000
 OPENWEATHER_API_KEY=your_openweathermap_api_key
-MONGO_URI=your_mongodb_connection_string
+MONGODB_URI=your_mongodb_connection_string
 BOT_TOKEN=your_telegram_bot_token
+TOKEN_SECRET=your_token_secret (any random string)
 ```
 
 ---

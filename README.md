@@ -12,15 +12,12 @@ Built with the lightweight and robust **grammY** framework for Telegram bot deve
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Screenshots](#screenshots)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Environment Variables](#environment-variables)
 - [Bot Commands](#bot-commands)
-- [API Endpoints](#api-endpoints)
-  - [Location Validation](#location-validation)
-  - [Get Weather](#get-weather)
-- [Contributing](#contributing)
 - [License](#license)
 
 ---
@@ -66,6 +63,11 @@ Built with the lightweight and robust **grammY** framework for Telegram bot deve
 - **dotenv**: For environment variable management.
 
 ---
+
+## Screenshots
+
+![Screenshot_20241126-081047](https://github.com/user-attachments/assets/d15029c0-c42f-4ae7-8727-f1b7215e501d)
+
 
 ## Getting Started
 

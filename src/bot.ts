@@ -122,7 +122,7 @@ const initBot = async () => {
     bot.catch((err) => console.error(err));
 
     new CronJob(
-      "* * * * *",
+      "0 * * * *", // Run every hour
       async () => await sendWeatherUpdates(bot, settings),
       null,
       true,

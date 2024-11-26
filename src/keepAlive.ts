@@ -3,7 +3,7 @@ import https from "https";
 
 export async function keepAlive(backendURL: string) {
   try {
-    const job = new CronJob("*/1 * * * *", async () => {
+    const job = new CronJob("*/13 * * * *", async () => {
       // Send a GET request to the server to keep it alive
       console.log("Sending keep-alive request...");
       https

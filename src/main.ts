@@ -7,12 +7,14 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import http from "http";
 import { Server } from "socket.io";
+import { keepAlive } from "./keepAlive";
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 
 const MONGODB_URI = process.env.MONGODB_URI || "";
 const hostname = process.env.HOSTNAME || "";
+const backendURL = process.env.BACKEND_URL || "";
 
 const allowedOrigins = [hostname, "http://localhost:3000"];
 
@@ -98,6 +100,14 @@ if (!MONGODB_URI) {
     res.send(
       "Telegram WeatherBot is running!, checkout '/api/v1/admin' endpoints"
     );
+  });
+
+  keepAlive(backendURL).then((job) => {
+    if (job) {
+      job.start();
+    }
+  }).catch((error) => {
+    console.error("Error starting keep-alive job:", error);
   });
 
   server.listen(PORT, () => {
